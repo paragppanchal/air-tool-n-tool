@@ -1,0 +1,22 @@
+<div class="container">
+
+  <h2 class="text-center">Here are all the tools</h2>
+  <div class="row">
+
+    <% @tools.each do |tool| %>
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="card">
+        <div id="card-body-1">
+          <div class="card-category">
+            <%= tool.title %>
+          </div>
+          <div class="card-avatar">
+            <img src="images/jad.png" alt="" id="jad">
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+</div>
