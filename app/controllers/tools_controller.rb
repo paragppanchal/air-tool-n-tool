@@ -1,23 +1,22 @@
 class ToolsController < ApplicationController
 
-  before_action: :set_tool, only: [:show, :edit, :update, :destroy]
+  before_action :set_tool, only: [:show, :edit, :update, :destroy]
+  after_action :authorize_access, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @tools = Tool.all
+    @tools = policy_scope(Tool)
   end
 
   def show
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @tool = Tool.new(user: @user)
+    @tool = Tool.new
   end
 
   def create
     @tool = Tool.new(tool_params)
-    @user = User.find(params[:user_id])
-    @tool.user = @user
+    @tool.user = current_user
     @tool.save
   end
 
@@ -35,11 +34,14 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:price_per_day)
+    params.require(:tool).permit(:title, :price_per_day)
   end
 
   def set_tool
     @tool = Tool.find(params[:id])
   end
 
+  def authorize_access
+    authorize @tool
+  end
 end
