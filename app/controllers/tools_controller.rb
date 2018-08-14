@@ -11,7 +11,20 @@ class ToolsController < ApplicationController
   end
   def create
     @tool = Tool.new(tool_params)
-
+    @user = User.find(params[:user_id])
+    @tool.user = @user
+    @tool.save
+  end
+  def edit
+    @tool = Tool.find(params[:id])
+  end
+  def update
+    @tool = Tool.find(params[:id])
+    @tool.update(tool_params)
+  end
+  def destroy
+    @tool = Tool.find(params[:id])
+    @tool.destroy
   end
 
   private
