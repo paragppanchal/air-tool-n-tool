@@ -1,9 +1,10 @@
 class BookingPolicy < ApplicationPolicy
  attr_reader :current_user
 
-  def initialize(current_user, tool)
+  def initialize(current_user, tool, booking)
     @current_user = current_user
     @tool = tool
+    @booking = booking
   end
 
   def new?
@@ -24,6 +25,7 @@ class BookingPolicy < ApplicationPolicy
 
   def update?
     @tool.user == @current_user
+    true
   end
 
   def destroy?
