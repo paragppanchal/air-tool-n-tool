@@ -5,14 +5,16 @@ class ToolsController < ApplicationController
 
   def index
     @tools = policy_scope(Tool)
-    @flats = Tool.where.not(latitude: nil, longitude: nil)
+    @tools_geo = Tool.where.not(latitude: nil, longitude: nil)
 
-    @markers = @flats.map do |flat|
+    @markers = @tools_geo.map do |tool|
       {
-        lat: flat.latitude,
-        lng: flat.longitude#,
+        lat: tool.latitude,
+        lng: tool.longitude#,
       }
     end
+
+    # raise
   end
 
   def show
