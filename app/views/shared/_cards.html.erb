@@ -1,18 +1,14 @@
 <div class="box">
   <div class="row-parent">
-    <h2 class="text-center">Here are all the tools</h2>
+    <h1 class="text-center">Recently Added Tools</h1>
     <div class="row">
 
       <% @tools.each do |tool| %>
       <div class="col-xs-12 col-sm-6 col-lg-4">
         <div class="card">
-          <div id="card-body-1">
-            <div class="card-avatar">
-              <img src="https://source.unsplash.com/collection/2342139/250x150" alt="" id="jad">
-              <div class="card-category">
-                <%= tool.title %>
-              </div>
-            </div>
+          <img src="https://source.unsplash.com/collection/2342139/250x150" alt="" class="card-hover">
+          <div class="card-category">
+            <%= link_to tool.title, tool_path(tool), class: 'link-colour' %>
           </div>
         </div>
       </div>
