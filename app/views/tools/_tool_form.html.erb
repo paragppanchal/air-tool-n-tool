@@ -1,34 +1,34 @@
-<%= simple_form_for(@tool) do |f| %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+<section id="tool-form">
+  <div class="add-tool-form">
+    <h3>Add Tool</h3>
+  <%= simple_form_for(@tool) do |f| %>
+
 
         <% if @tool.errors.any? %>
-          <div class="errors-container">
-            <ul>
-              <% @tool.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
+        <div class="errors-container">
+          <ul>
+            <% @tool.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
         <% end %>
 
         <div class='form-group'>
-          <%= f.label :title %>
-          <%= f.text_field :title, class: 'form-control' %>
+          <%= f.label :title, class: 'lable-style' %>
+          <%= f.text_field :title, class: 'form-control form-styling' %>
         </div>
 
-         <div class='form-group'>
-          <%= f.label :price_per_day %>
-          <%= f.text_field :price_per_day, class: 'form-control' %>
+        <div class='form-group'>
+          <%= f.label :price_per_day, class: 'lable-style' %>
+          <%= f.text_field :price_per_day, class: 'form-control form-styling' %>
         </div>
 
-        <%= f.submit class: 'btn btn-primary btn-block' %>
+        <%= f.submit class: 'btn btn-primary btn-block btn-add-tool' %>
 
 
       </div>
-    </div>
-  </div>
 
 
-<% end %>
+  <% end %>
+</section>
