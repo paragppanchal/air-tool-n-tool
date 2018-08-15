@@ -1,0 +1,12 @@
+#map {
+  width: 100%;
+  height: 100vh;
+  flex: 0 0 375px;
+  position: sticky !important;
+  top: 0;
+  margin-left: 15px;
+}
+
+.box {
+  display: flex;
+}
