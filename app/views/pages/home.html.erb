@@ -4,8 +4,11 @@
       <h1>Peer to peer tool rental</h1>
       <h3>Why buy a tool for a project when you can just rent it?</h3>
       <p>I want to...</p>
-      <input type="submit" class="btn btn-warning btn-lg" value="Rent a tool">
-      <input type="submit" class="btn btn-warning btn-lg" value="Lend out a tool">
+      <!-- <button type="button" class="btn btn-lg btn-warning"></button> -->
+      <%= link_to 'Rent a tool', tools_path, class: 'btn btn-lg btn-margin btn-warning'%>
+      <%= link_to 'Lend out a tool', tools_path, class: 'btn btn-lg btn-warning'%>
+      <p>note to team: remind to change the route for lend out a tool</p>
+      </button>
 
 
       </form>
