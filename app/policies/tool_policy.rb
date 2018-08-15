@@ -13,6 +13,10 @@ class ToolPolicy < ApplicationPolicy
     return true
   end
 
+  def show?
+    return true
+  end
+
   def edit?
     update?
   end
