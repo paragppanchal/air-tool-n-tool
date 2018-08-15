@@ -1,22 +1,48 @@
-<div class="container">
+<div class="box">
+  <div class="row-parent">
+    <h2 class="text-center">Here are all the tools</h2>
+    <div class="row">
 
-  <h2 class="text-center">Here are all the tools</h2>
-  <div class="row">
-
-    <% @tools.each do |tool| %>
-    <div class="col-xs-12 col-sm-6 col-lg-4">
-      <div class="card">
-        <div id="card-body-1">
-          <div class="card-avatar">
-            <img src="https://source.unsplash.com/collection/2342139/250x150" alt="" id="jad">
-            <div class="card-category">
-              <%= tool.title %>
+      <% @tools.each do |tool| %>
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+        <div class="card">
+          <div id="card-body-1">
+            <div class="card-avatar">
+              <img src="https://source.unsplash.com/collection/2342139/250x150" alt="" id="jad">
+              <div class="card-category">
+                <%= tool.title %>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
-
   </div>
+
+
+
+
+  <div id="map">
+  </div>
+
+  <script>
+    function initMap() {
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 52.5206, lng: 13.4098},
+          scrollwheel: false,
+          zoom: 8
+        });
+      }
+    </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Gmaps JavaScript -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzER7O10ZOUp7FloJzMe2r8X1GIQhgt7Q&callback=initMap">
+  </script>
+
 </div>
