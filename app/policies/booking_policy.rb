@@ -7,13 +7,16 @@ class BookingPolicy < ApplicationPolicy
     @booking = booking
   end
 
+  def index?
+    true
+  end
+
   def new?
     create?
   end
 
   def create?
     @tool.user != @current_user
-    #true
   end
 
   def show?

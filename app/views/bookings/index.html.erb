@@ -1,2 +1,43 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<h1>My Rental Bookings</h1>
+
+
+
+
+<table>
+  <th>
+    <td>Tool</td>
+    <td>User</td>
+    <td>Start Date</td>
+    <td>End Date</td>
+  </th>
+  <tr>
+    <% current_user.bookings.each do |booking| %>
+      <td><%= booking.tool.title%></td>
+      <td><%= booking.user.email %></td>
+      <td><%= booking.start_date %></td>
+      <td><%= booking.end_date %></td>
+    <% end %>
+  </tr>
+</table>
+
+<h1>My Landings</h1>
+<br><br>
+<table>
+  <th>
+    <td>Tool</td>
+    <td>User</td>
+    <td>Start Date</td>
+    <td>End Date</td>
+  </th>
+  <tr>
+    <% current_user.outbound_bookings.each do |booking| %>
+      <td><%= booking.tool.title%></td>
+      <td><%= booking.user.email %></td>
+      <td><%= booking.start_date %></td>
+      <td><%= booking.end_date %></td>
+    <% end %>
+  </tr>
+</table>
+
+
+

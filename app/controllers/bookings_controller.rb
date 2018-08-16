@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   after_action :authorize_access, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   def show
