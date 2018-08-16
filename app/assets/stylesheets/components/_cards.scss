@@ -13,39 +13,16 @@
   top: 10px;
   width: 40px;
   border-radius: 50%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
 }
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
+}
+.link-colour{
+  color: white;
+  background-color: black;
+  padding: 5px;
   text-transform: uppercase;
-  text-align: center;
-  padding: 50px;
-}
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
-}
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
 }
