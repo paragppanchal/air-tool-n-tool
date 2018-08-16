@@ -5,6 +5,7 @@
     </div>
     <div class="col-sm-4">
       <%= image_tag "https://source.unsplash.com/rJ0UoWGMMSY/1600x900", class:'img-fluid' %>
+
     </div>
     <div class="col-sm-4">
      <%= image_tag "https://source.unsplash.com/cD7_Bs6GyeM/1600x900", class:'img-fluid' %>
@@ -17,10 +18,12 @@
     <div class="row">
       <div class="col-md-6">
         <h1><%= @tool.title %></h1>
+
+        <p><span>$$$</span>$$</p>
+        <p class="reserve-description">Innovative cooking, paired with fine wines in a modern setting.</p>
+
         <h2>Day Rate: <u>$<%= @tool.price_per_day %></u></h2>
-        <%= cl_image_tag @tool.photo, height: 300, width: 400, crop: :fill %>
-        <p class="reserve-description">Innovative tool, best used for small home projects or medium sized ones.</p>
-        <%= link_to "Rent Me", new_tool_booking_path(@tool, @booking), class: "btn btn-success" %>
+
       </div>
       <div class="col-md-6">
         <div class="reserve-seat-block">
@@ -33,16 +36,16 @@
           </div>
           <div class="reserve-btn">
             <div class="featured-btn-wrap">
-              <a href="#" class="btn btn-danger">RENT TOOL</a>
+              <a href="#" class="btn btn-danger">RESERVE A SEAT</a>
             </div>
           </div>
         </div>
+        <%= cl_image_tag @tool.photo, height: 200, width: 400, crop: :fill, class:'img-fluid' %>
       </div>
     </div>
   </div>
 </section>
-<!--//END RESERVE A SEAT -->
-<!--============================= BOOKING DETAILS =============================-->
+
 <section class="light-bg booking-details_wrap">
   <div class="container">
     <div class="row">
