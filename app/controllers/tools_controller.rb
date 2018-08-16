@@ -28,7 +28,12 @@ class ToolsController < ApplicationController
   def create
     @tool = Tool.new(tool_params)
     @tool.user = current_user
-    @tool.save
+    if @tool.save
+      #in rails we use entire objects to set ids. it is very smart that way.
+      redirect_to tool_path(@tool)
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -45,7 +50,7 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:title, :price_per_day)
+    params.require(:tool).permit(:title, :price_per_day, :photo)
   end
 
   def set_tool
