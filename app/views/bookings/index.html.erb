@@ -1,4 +1,4 @@
-<h1>My Bookings</h1>
+<h1>My Rental Bookings</h1>
 
 
 
@@ -19,5 +19,25 @@
     <% end %>
   </tr>
 </table>
+
+<h1>My Landings</h1>
+<br><br>
+<table>
+  <th>
+    <td>Tool</td>
+    <td>User</td>
+    <td>Start Date</td>
+    <td>End Date</td>
+  </th>
+  <tr>
+    <% current_user.outbound_bookings.each do |booking| %>
+      <td><%= booking.tool.title%></td>
+      <td><%= booking.user.email %></td>
+      <td><%= booking.start_date %></td>
+      <td><%= booking.end_date %></td>
+    <% end %>
+  </tr>
+</table>
+
 
 
