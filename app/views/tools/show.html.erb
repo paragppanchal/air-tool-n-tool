@@ -4,8 +4,8 @@
       <%= image_tag "https://source.unsplash.com/WEWTGkPUVT0/1600x900", class:'img-fluid' %>
     </div>
     <div class="col-sm-4">
-      <%= cl_image_tag @tool.photo, height: 300, width: 400, crop: :fill, class:'img-fluid' %>
-      <!-- https://source.unsplash.com/rJ0UoWGMMSY/1600x900 -->
+      <%= image_tag "https://source.unsplash.com/rJ0UoWGMMSY/1600x900", class:'img-fluid' %>
+
     </div>
     <div class="col-sm-4">
      <%= image_tag "https://source.unsplash.com/cD7_Bs6GyeM/1600x900", class:'img-fluid' %>
@@ -24,9 +24,6 @@
 
         <h2>Day Rate: <u>$<%= @tool.price_per_day %></u></h2>
 
-        <p class="reserve-description">Innovative tool, best used for small home projects or medium sized ones.</p>
-        <%= link_to "Rent Me", new_tool_booking_path(@tool, @booking), class: "btn btn-success" %>
-
       </div>
       <div class="col-md-6">
         <div class="reserve-seat-block">
@@ -43,6 +40,7 @@
             </div>
           </div>
         </div>
+        <%= cl_image_tag @tool.photo, height: 200, width: 400, crop: :fill, class:'img-fluid' %>
       </div>
     </div>
   </div>
