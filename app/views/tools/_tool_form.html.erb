@@ -1,30 +1,45 @@
-<%= simple_form_for(@tool) do |f| %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+<div class="container">
+  <div class="frame">
+    <div class="nav">
+      <ul class"links">
+        <li class="signin-active"><a class="btn">Add Tool</a></li>
+      </ul>
+    </div>
+    <div ng-app ng-init="checked = false">
 
-        <% if @tool.errors.any? %>
-          <div class="errors-container">
-            <ul>
-              <% @tool.errors.full_messages.each do |message| %>
+      <%= simple_form_for(@tool) do |f| %>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+
+            <% if @tool.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% @tool.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
-              <% end %>
-            </ul>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
+
+            <div class='form-group'>
+              <%= f.label :title %>
+              <%= f.text_field :title, class: 'form-control form-styling' %>
+            </div>
+
+            <div class='form-group'>
+              <%= f.label :price_per_day %>
+              <%= f.text_field :price_per_day, class: 'form-control form-styling' %>
+            </div>
+
+
+            <%= f.submit class: 'btn-primary btn-block btn-signin' %>
+
           </div>
-        <% end %>
-
-        <%= f.input :title %>
-
-        <%= f.input :price_per_day %>
-
-        <%= f.input :address %>
-
-        <%= f.submit class: 'btn btn-primary btn-block' %>
-
-
+        </div>
       </div>
+      <% end %>
     </div>
   </div>
+</div>
 
-
-<% end %>
