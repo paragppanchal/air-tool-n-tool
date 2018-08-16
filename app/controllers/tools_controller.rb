@@ -14,7 +14,6 @@ class ToolsController < ApplicationController
       }
     end
 
-    # raise
   end
 
   def show
