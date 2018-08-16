@@ -8,8 +8,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="slider-content_wrap">
-                <h1>Discover great tools at great prices</h1>
-                <h5>Let's uncover the best tools nearest to you.</h5>
+                <h1>Hardware stores are for sausages. We are for tools.</h1>
+                <h4>Rent power tools at great prices.</h4>
               </div>
             </div>
           </div>
@@ -18,12 +18,13 @@
 
               <%= form_tag(tools_path, method: :get, id:'main-search') do %>
 
-              <%= text_field_tag :query, :attr, placeholder: "What are you looking for?" %>
+              <%= text_field_tag :query, :attr, placeholder: "Try  'drill'" %>
 
-              <%= submit_tag 'Show me!', class: 'btn-form' %>
+              <%= submit_tag 'SEARCH', class: 'btn-form' %>
               <% end %>
               <div class="slider-link">
-                <a href="#">Browse Popular</a><span>or</span> <a href="#">Recently Added</a>
+                <%= link_to 'Browse Popular ', tools_path %>
+                <%= link_to ' Recently Added', tools_path %>
               </div>
             </div>
           </div>
@@ -41,8 +42,11 @@
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   border: none;
+  margin: 30px 0;
 }
-
+.home-btn{
+  margin-top:50px;
+}
 </style>
 <!--============================= FEATURED PLACES =============================-->
 
@@ -51,7 +55,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-12">
         <div class="styled-heading">
-          <h3>Featured Tools</h3>
+          <h3>Popular Tools in <span style="color: #007f8c; font-weight:600">Melbourne, Australia</span></h3>
         </div>
       </div>
     </div>
@@ -67,26 +71,12 @@
        <%= image_tag "https://source.unsplash.com/CuDoRFyTkAQ/400x250", class:'img-fluid img-shadow' %>
      </div>
    </div>
-   <div class="row justify-content-center">
+   <div class="row justify-content-center home-btn">
     <div class="col-lg-12">
       <div class="featured-btn-wrap">
-        <a href="#" class="btn btn-danger">VIEW ALL</a>
+        <%= link_to 'VIEW ALL', tools_path, class:'btn btn-danger' %>
       </div>
     </div>
   </div>
 </div>
 </section>
-<!--//END FEATURED PLACES -->
-<section class="main-block light-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="add-listing-wrap">
-          <h2>Reach millions of People</h2>
-          <p>Add your Business infront of millions and earn 3x profits from our listing</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--//END ADD LISTING -->
