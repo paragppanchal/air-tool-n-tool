@@ -13,15 +13,11 @@
           </div>
         <% end %>
 
-        <div class='form-group'>
-          <%= f.label :title %>
-          <%= f.text_field :title, class: 'form-control' %>
-        </div>
+        <%= f.input :title %>
 
-         <div class='form-group'>
-          <%= f.label :price_per_day %>
-          <%= f.text_field :price_per_day, class: 'form-control' %>
-        </div>
+        <%= f.input :price_per_day %>
+
+        <%= f.input :address %>
 
         <%= f.submit class: 'btn btn-primary btn-block' %>
 
