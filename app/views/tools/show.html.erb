@@ -36,7 +36,7 @@
           </div>
           <div class="reserve-btn">
             <div class="featured-btn-wrap">
-              <a href="#" class="btn btn-danger">RESERVE A SEAT</a>
+              <%= link_to 'RESERVE TOOL', new_tool_booking_path(@tool), class:'btn btn-danger' %>
             </div>
           </div>
         </div>
@@ -95,8 +95,7 @@
           <hr>
           <div class="customer-review_wrap">
             <div class="customer-img">
-              <%= image_tag "http://kitt.lewagon.com/placeholder/users/random", class: "img-fluid review-img" %>
-              <!-- <img src="images/customer-img1.jpg" class="img-fluid" alt="#"> -->
+              <%= image_tag "https://source.unsplash.com/oJUTLMxMsgE/1600x900", class:'img-fluid review-img' %>
               <p>Amanda G</p>
               <span>35 Reviews</span>
             </div>
@@ -122,7 +121,7 @@
           <hr>
           <div class="customer-review_wrap">
             <div class="customer-img">
-              <%= image_tag "http://kitt.lewagon.com/placeholder/users/AR9mvykzSOA", class: "img-fluid review-img" %>
+              <%= image_tag "https://source.unsplash.com/oJUTLMxMsgE/1600x900", class:'img-fluid review-img' %>
               <p>Kevin W</p>
               <span>17 Reviews</span>
             </div>
