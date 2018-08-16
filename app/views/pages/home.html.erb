@@ -1,41 +1,92 @@
 <% content_for :title, "Home|AirTool-n-Tool" %>
+<section class="slider d-flex align-items-center">
+  <!-- <img src="images/slider.jpg" class="img-fluid" alt="#"> -->
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-12">
+        <div class="slider-title_box">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="slider-content_wrap">
+                <h1>Discover great tools at great prices</h1>
+                <h5>Let's uncover the best tools nearest to you.</h5>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-12">
 
-<section id="root">
-  <div class="banner" style="background: linear-gradient(-225deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%), url('https://source.unsplash.com/YXSJ33Pbg7g/1300x900');">
-    <div class="banner-content">
-      <h1>Peer to peer tool rental</h1>
-      <h3>Why buy a tool for a project when you can just rent it?</h3>
-      <p>I want to hire...</p>
-      <%= form_tag(tools_path, method: :get, id:'search-form') do %>
-        <%= text_field_tag :query %>
-        <%= submit_tag 'Show me!' %>
-      <% end %>
-      <!-- <button type="button" class="btn btn-lg btn-warning"></button> -->
-      <%= link_to 'Rent a tool', tools_path, class: 'btn btn-lg btn-margin btn-warning'%>
-      <%= link_to 'Lend out a tool', tools_path, class: 'btn btn-lg btn-warning'%>
-    </div>
-  </div>
+              <%= form_tag(tools_path, method: :get, id:'main-search') do %>
 
-  <div class="container text-center padded features">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <img src="https://www.plattar.com/wp-content/uploads/2018/06/logo-forbes.png" alt="">
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <img src="https://www.plattar.com/wp-content/uploads/2018/06/logo-the-australian.png" alt="">
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <img src="https://www.plattar.com/wp-content/uploads/2018/06/logo-business-insider.png" alt="">
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <img src="https://www.plattar.com/wp-content/uploads/2018/06/logo-startup-daily.png" alt="">
+              <%= text_field_tag :query, :attr, placeholder: "What are you looking for?" %>
+
+              <%= submit_tag 'Show me!', class: 'btn-form' %>
+              <% end %>
+              <div class="slider-link">
+                <a href="#">Browse Popular</a><span>or</span> <a href="#">Recently Added</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
+<!--// SLIDER -->
+<!--//END HEADER -->
 <style>
-  #search-form input {
-    color: black;
-  }
+#main-search input{
+  padding: 24px;
+  width: 40%;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: none;
+}
+
 </style>
+<!--============================= FEATURED PLACES =============================-->
+
+<section class="main-block light-bg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="styled-heading">
+          <h3>Featured Tools</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <%= image_tag "https://source.unsplash.com/d0yNnTEjEWY/400x250", class:'img-fluid img-shadow' %>
+      </div>
+      <div class="col-lg-4">
+        <%= image_tag "https://source.unsplash.com/Geh-r9A4RBg/400x250", class:'img-fluid img-shadow' %>
+
+      </div>
+      <div class="col-lg-4">
+       <%= image_tag "https://source.unsplash.com/CuDoRFyTkAQ/400x250", class:'img-fluid img-shadow' %>
+     </div>
+   </div>
+   <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="featured-btn-wrap">
+        <a href="#" class="btn btn-danger">VIEW ALL</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!--//END FEATURED PLACES -->
+<section class="main-block light-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="add-listing-wrap">
+          <h2>Reach millions of People</h2>
+          <p>Add your Business infront of millions and earn 3x profits from our listing</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--//END ADD LISTING -->

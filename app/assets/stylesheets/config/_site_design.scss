@@ -150,7 +150,7 @@ p {
 .slider {
   background: url(../images/slider.jpg) no-repeat;
   background-size: cover;
-  min-height: 800px; }
+  height: 50vh; }
   @media (max-width: 992px) {
     .slider {
       min-height: 700px; } }
@@ -404,7 +404,8 @@ p {
   display: inline-block; }
 
 .featured-btn-wrap {
-  text-align: center; }
+  text-align: center;
+margin: 50px 0;}
   @media (max-width: 1200px) {
     .featured-btn-wrap {
       margin: 3px 0 0; } }
