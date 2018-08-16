@@ -28,14 +28,13 @@ class BookingsController < ApplicationController
     end
   end
 
-
   def edit
     @tool = Tool.find(params[:tool_id])
   end
 
   def update
+    @tool = Tool.find(params[:tool_id])
     @booking.update(booking_params)
-
   end
 
   def destroy
@@ -53,6 +52,6 @@ class BookingsController < ApplicationController
   end
 
   def authorize_access
-    authorize @tool
+    authorize @booking
   end
 end
