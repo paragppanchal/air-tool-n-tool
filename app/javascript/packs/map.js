@@ -14,3 +14,7 @@ if (mapElement) {
     map.fitLatLngBounds(markers);
   }
 }
+
+// map.setCenter({lat:LAT_VALUE, lng:LONG_VALUE});
+// -37.823808,
+//  longitude: 144.9912611,
