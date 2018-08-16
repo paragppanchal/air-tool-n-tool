@@ -18,6 +18,7 @@ class ToolsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -27,7 +28,9 @@ class ToolsController < ApplicationController
   def create
     @tool = Tool.new(tool_params)
     @tool.user = current_user
-    @tool.save
+    if @tool.save!
+    redirect_to tools_path
+    end
   end
 
   def edit
