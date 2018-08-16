@@ -9,7 +9,7 @@ class ToolsController < ApplicationController
     else
       @tools = policy_scope(Tool)
       @tools_geo = Tool.where.not(latitude: nil, longitude: nil)
-
+      
       @markers = @tools_geo.map do |tool|
         {
           lat: tool.latitude,
@@ -17,6 +17,7 @@ class ToolsController < ApplicationController
         }
       end
     end
+
   end
 
   def show
