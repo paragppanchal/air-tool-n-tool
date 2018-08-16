@@ -1,39 +1,47 @@
-<section id="tool-form">
-  <div class="add-tool-form">
-    <h3>Add Tool</h3>
-    <%= simple_form_for(@tool) do |f| %>
-
-
-    <% if @tool.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% @tool.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
+<div class="container">
+  <div class="frame">
+    <div class="nav">
+      <ul class"links">
+        <li class="signin-active"><a class="btn">Add Tool</a></li>
       </ul>
     </div>
-    <% end %>
+    <div ng-app ng-init="checked = false">
 
-    <div class='form-group'>
-      <%= f.label :title, class: 'lable-style' %>
-      <%= f.text_field :title, class: 'form-control form-styling' %>
-    </div>
+      <%= simple_form_for(@tool) do |f| %>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
 
-    <div class='form-group'>
-      <%= f.label :price_per_day, class: 'lable-style' %>
-      <%= f.text_field :price_per_day, class: 'form-control form-styling' %>
-    </div>
+            <% if @tool.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% @tool.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+            <% end %>
 
-    <div class='form-group'>
-      <%= f.label :address, class: 'lable-style' %>
-      <%= f.text_field :address, class: 'form-control form-styling' %>
+            <div class='form-group'>
+              <%= f.label :title %>
+              <%= f.text_field :title, class: 'form-control form-styling' %>
+            </div>
+
+            <div class='form-group'>
+              <%= f.label :price_per_day %>
+              <%= f.text_field :price_per_day, class: 'form-control form-styling' %>
+            </div>
+
+            <%= f.submit class: 'btn-primary btn-block btn-signin' %>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
 
     <%= f.submit class: 'btn btn-primary btn-block btn-add-tool' %>
 
-
   </div>
+</div>
 
-
-  <% end %>
-</section>
