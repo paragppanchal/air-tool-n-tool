@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-
+    # before_action => set_booking
   end
 
   def new
@@ -29,15 +29,18 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    @tool = Tool.find(params[:tool_id])
+    # before_action => set_booking
   end
 
   def update
-    @tool = Tool.find(params[:tool_id])
+    # before_action => set_booking
+    @tool = @booking.tool
     @booking.update(booking_params)
+    redirect_to root_url
   end
 
   def destroy
+    # before_action => set_booking
     @booking.destroy
   end
 
