@@ -1,22 +1,26 @@
 <div class="box">
-  <div class="row-parent">
+  <div class="row">
     <h2 class="text-center">Here are all the tools</h2>
-    <div class="row">
-
-      <% @tools.each do |tool| %>
-      <div class="col-xs-12 col-sm-6 col-lg-4">
-        <div class="card">
-          <div id="card-body-1">
-            <div class="card-avatar">
-              <img src="https://source.unsplash.com/collection/2342139/250x150" alt="" id="jad">
-              <div class="card-category">
-                <%= tool.title %>
-              </div>
+    <% @tools.each do |tool| %>
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="card">
+        <div id="card-body-1">
+          <div class="card-avatar">
+            <img src="https://source.unsplash.com/collection/2342139/250x150" alt="" id="jad">
+            <div class="card-category">
+              <%= tool.title %>
             </div>
           </div>
         </div>
       </div>
-      <% end %>
     </div>
+    <% end %>
+  </div>
+
+  <div
+    id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>">
   </div>
 </div>
+
