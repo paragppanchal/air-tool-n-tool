@@ -897,14 +897,18 @@ footer {
     .follow ul li {
       list-style: none;
       padding: 13px 0;
-      width: 33%; }
+      width: 33%;
+    margin: 0 0 0 8px;
+text-align: center;}
       @media (max-width: 1200px) {
         .follow ul li {
           padding: 12px 18px; } }
       .follow ul li:first-child, .follow ul li:nth-child(2) {
         border-right: 1px solid #ededed; }
       .follow ul li h6 {
-        margin: 0; }
+        margin: 0;
+        color:black;
+      }
   .follow a {
     color: #ff3a6d;
     text-align: center;
