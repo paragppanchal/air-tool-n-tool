@@ -40,7 +40,6 @@
             </div>
           </div>
         </div>
-        <%= cl_image_tag @tool.photo, height: 200, width: 400, crop: :fill, class:'img-fluid' %>
       </div>
     </div>
   </div>
@@ -51,10 +50,17 @@
     <div class="row">
       <div class="col-md-8 responsive-wrap">
         <div class="booking-checkbox_wrap">
-          <div class="booking-checkbox">
+          <div class="booking-checkbox row">
+            <div class="col-lg-6"><%= cl_image_tag @tool.photo, height: 200, width: 400, crop: :fill, class:'img-fluid' %>
+
+            </div>
+            <div class="col-lg-6">
             <p>Power tools are used in industry, in construction, in the garden, for housework tasks such as cooking, cleaning, and around the house for purposes of driving (fasteners), drilling, cutting, shaping, sanding, grinding, routing, polishing, painting, heating and more. </p>
-            <hr>
+
+            </div>
+
           </div>
+          <hr>
           <div class="row">
             <div class="col-md-4">
               <label class="custom-checkbox">
