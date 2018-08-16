@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title><%= content_for?(:title) ? yield(:title) : "AirTool-n-Tool" %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-
-
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -17,10 +15,9 @@
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= render "/shared/footer" %>
-
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyDVMzw5IA1r288CjQutomDMCvpN_j1Lmo8" %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag "map" %>
+    <%= javascript_pack_tag 'map' %>
   </body>
 </html>

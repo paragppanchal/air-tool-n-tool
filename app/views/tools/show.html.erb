@@ -1,14 +1,187 @@
-<section id="show">
+<section id="swiper-head">
+  <div class="row">
+    <div class="col-sm-4">
+      <%= image_tag "https://source.unsplash.com/WEWTGkPUVT0/1600x900", class:'img-fluid' %>
+    </div>
+    <div class="col-sm-4">
+      <%= image_tag "https://source.unsplash.com/rJ0UoWGMMSY/1600x900", class:'img-fluid' %>
+    </div>
+    <div class="col-sm-4">
+     <%= image_tag "https://source.unsplash.com/cD7_Bs6GyeM/1600x900", class:'img-fluid' %>
+   </div>
+ </div>
+</section>
+
+<section class="reserve-block">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="col-md-6">
         <h1><%= @tool.title %></h1>
         <h2>Day Rate: <u>$<%= @tool.price_per_day %></u></h2>
-        <button type="button" class="btn btn-success">Rent Me</button>
+        <p class="reserve-description">Innovative tool, best used for small home projects or medium sized ones.</p>
+        <%= link_to "Rent Me", new_tool_booking_path(@tool, @booking), class: "btn btn-success" %>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <h3>insert image here</h3>
+      <div class="col-md-6">
+        <div class="reserve-seat-block">
+          <div class="reserve-rating">
+            <span>9.5</span>
+          </div>
+          <div class="review-btn">
+            <a href="#" class="btn btn-outline-danger">WRITE A REVIEW</a>
+            <span>34 reviews</span>
+          </div>
+          <div class="reserve-btn">
+            <div class="featured-btn-wrap">
+              <a href="#" class="btn btn-danger">RENT TOOL</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+<!--//END RESERVE A SEAT -->
+<!--============================= BOOKING DETAILS =============================-->
+<section class="light-bg booking-details_wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 responsive-wrap">
+        <div class="booking-checkbox_wrap">
+          <div class="booking-checkbox">
+            <p>Power tools are used in industry, in construction, in the garden, for housework tasks such as cooking, cleaning, and around the house for purposes of driving (fasteners), drilling, cutting, shaping, sanding, grinding, routing, polishing, painting, heating and more. </p>
+            <hr>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <label class="custom-checkbox">
+                <span class="ti-check-box"></span>
+                <span class="custom-control-description">Brand New Tool</span>
+              </label> </div>
+              <div class="col-md-4">
+                <label class="custom-checkbox">
+                 <span class="ti-check-box"></span>
+                 <span class="custom-control-description">Gardening</span>
+               </label>
+             </div>
+             <div class="col-md-4">
+              <label class="custom-checkbox">
+               <span class="ti-check-box"></span>
+               <span class="custom-control-description">Electrical Source</span>
+             </label> </div>
+             <div class="col-md-4">
+              <label class="custom-checkbox">
+                <span class="ti-check-box"></span>
+                <span class="custom-control-description">Stuff</span>
+              </label>
+            </div>
+            <div class="col-md-4">
+              <label class="custom-checkbox">
+               <span class="ti-check-box"></span>
+               <span class="custom-control-description">Special</span>
+             </label> </div>
+             <div class="col-md-4">
+              <label class="custom-checkbox">
+                <span class="ti-check-box"></span>
+                <span class="custom-control-description">Accepts Credit Cards</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="booking-checkbox_wrap mt-4">
+          <hr>
+          <div class="customer-review_wrap">
+            <div class="customer-img">
+              <%= image_tag "http://kitt.lewagon.com/placeholder/users/random", class: "img-fluid review-img" %>
+              <!-- <img src="images/customer-img1.jpg" class="img-fluid" alt="#"> -->
+              <p>Amanda G</p>
+              <span>35 Reviews</span>
+            </div>
+            <div class="customer-content-wrap">
+              <div class="customer-content">
+                <div class="customer-review">
+                  <h6>Best <%= @tool.title %> in Melbourne</h6>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span class="round-icon-blank"></span>
+                  <p>Reviewed 2 days ago</p>
+                </div>
+                <div class="customer-rating">8.0</div>
+              </div>
+              <p class="customer-text">Best <%= @tool.title %> hands down.
+              </p>
+              <span>28 people marked this review as helpful</span>
+              <a href="#"><span class="icon-like"></span>Helpful</a>
+            </div>
+          </div>
+          <hr>
+          <div class="customer-review_wrap">
+            <div class="customer-img">
+              <%= image_tag "http://kitt.lewagon.com/placeholder/users/AR9mvykzSOA", class: "img-fluid review-img" %>
+              <p>Kevin W</p>
+              <span>17 Reviews</span>
+            </div>
+            <div class="customer-content-wrap">
+              <div class="customer-content">
+                <div class="customer-review">
+                  <h6>Poor quality</h6>
+                  <span class="customer-rating-red"></span>
+                  <span class="round-icon-blank"></span>
+                  <span class="round-icon-blank"></span>
+                  <span class="round-icon-blank"></span>
+                  <span class="round-icon-blank"></span>
+                  <p>Reviewed 3 months ago</p>
+                </div>
+                <div class="customer-rating customer-rating-red">2.0</div>
+              </div>
+              <p class="customer-text">Terrible. Won't rent again</p>
+              <span>10 people marked this review as helpful</span>
+              <a href="#"><span class="icon-like"></span>Helpful</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 responsive-wrap">
+        <div class="contact-info">
+          <%= image_tag "map.jpg" %>
+          <!-- <img src="app/assets/images/logo.png" class="img-fluid" alt="#"> -->
+          <div class="address">
+            <span class="icon-location-pin"></span>
+            <p>52 Stewart Street<br>Richmond, Victoria, Australia</p>
+          </div>
+          <div class="address">
+            <span class="icon-clock"></span>
+            <p>Mon - Sun 09:30 am - 05:30 pm <br>
+              <span class="open-now">AVAILABLE NOW</span></p>
+            </div>
+            <a href="#" class="btn-outline-danger btn-contact">SEND A MESSAGE</a>
+          </div>
+          <div class="follow">
+            <div class="follow-img">
+
+              <%= image_tag "follow-img.jpg" %>
+              <h6>Christine Evans</h6>
+              <span>Richmond, Victoria</span>
+            </div>
+            <ul class="social-counts">
+              <li>
+                <h6>26</h6>
+                <span>Listings</span>
+              </li>
+              <li>
+                <h6>326</h6>
+                <span>Followers</span>
+              </li>
+              <li>
+                <h6>12</h6>
+                <span>Followers</span>
+              </li>
+            </ul>
+            <a href="#">FOLLOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--//END BOOKING DETAILS -->
