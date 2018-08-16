@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :tools
   has_many :bookings
+  has_many :outbound_bookings, class_name: :Booking, through: :tools, source: :bookings
 end

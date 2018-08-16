@@ -5,7 +5,11 @@
     <div class="banner-content">
       <h1>Peer to peer tool rental</h1>
       <h3>Why buy a tool for a project when you can just rent it?</h3>
-      <p>I want to...</p>
+      <p>I want to hire...</p>
+      <%= form_tag(tools_path, method: :get, id:'search-form') do %>
+        <%= text_field_tag :query %>
+        <%= submit_tag 'Show me!' %>
+      <% end %>
       <!-- <button type="button" class="btn btn-lg btn-warning"></button> -->
       <%= link_to 'Rent a tool', tools_path, class: 'btn btn-lg btn-margin btn-warning'%>
       <%= link_to 'Lend out a tool', tools_path, class: 'btn btn-lg btn-warning'%>
@@ -29,3 +33,9 @@
     </div>
   </div>
 </section>
+
+<style>
+  #search-form input {
+    color: black;
+  }
+</style>

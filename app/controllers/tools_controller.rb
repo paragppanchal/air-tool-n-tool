@@ -4,17 +4,20 @@ class ToolsController < ApplicationController
   after_action :authorize_access, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @tools = policy_scope(Tool)
-    @tools_geo = Tool.where.not(latitude: nil, longitude: nil)
-
-    @markers = @tools_geo.map do |tool|
-      {
-        lat: tool.latitude,
-        lng: tool.longitude#,
-      }
+    if params[:query].present?
+      @tools = policy_scope(Tool).where("title ILIKE ?", "%#{params[:query]}%")
+    else
+      @tools = policy_scope(Tool)
+      @tools_geo = Tool.where.not(latitude: nil, longitude: nil)
+      
+      @markers = @tools_geo.map do |tool|
+        {
+          lat: tool.latitude,
+          lng: tool.longitude#,
+        }
+      end
     end
 
-    # raise
   end
 
   def show
@@ -29,7 +32,6 @@ class ToolsController < ApplicationController
     @tool = Tool.new(tool_params)
     @tool.user = current_user
     if @tool.save
-      #in rails we use entire objects to set ids. it is very smart that way.
       redirect_to tool_path(@tool)
     else
       render 'new'

@@ -12,7 +12,8 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    @tool.user != @current_user
+    #true
   end
 
   def show?

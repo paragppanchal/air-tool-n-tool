@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
   def new
     @tool = Tool.find(params[:tool_id])
     @booking = Booking.new
+    @booking.tool = @tool
   end
 
   def create
