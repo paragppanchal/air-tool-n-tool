@@ -18,13 +18,12 @@
 
               <%= form_tag(tools_path, method: :get, id:'main-search') do %>
 
-              <%= text_field_tag :query, :attr, placeholder: "Try  'drill'" %>
+              <%= text_field_tag :query, :drill, placeholder: "Try typing a tool name" %>
 
               <%= submit_tag 'SEARCH', class: 'btn-form' %>
               <% end %>
               <div class="slider-link">
-                <%= link_to 'Browse Popular ', tools_path %>
-                <%= link_to ' Recently Added', tools_path %>
+
               </div>
             </div>
           </div>
@@ -46,6 +45,9 @@
 }
 .home-btn{
   margin-top:50px;
+}
+.light-bg{
+  padding: 90px 50px 100px 50px;
 }
 </style>
 <!--============================= FEATURED PLACES =============================-->
