@@ -14,9 +14,9 @@ if (mapElement) {
   const markerObjs = map.addMarkers(markers);
   console.log(markerObjs);
 
-  // for (let i = 0; i < markers.length; i++) {
-  //   bounds.extend(markers[i]);
-  // }
+  for (let i = 0; i < markers.length; i++) {
+    bounds.extend(markers[i]);
+  }
 
   if (markers.length === 0) {
     map.setZoom(2);
