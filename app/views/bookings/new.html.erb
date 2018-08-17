@@ -1,9 +1,86 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
-      <h2>Add a new booking</h2>
+<% content_for :title, "Home|AirTool-n-Tool" %>
+<section class="slider d-flex align-items-center">
+  <!-- <img src="images/slider.jpg" class="img-fluid" alt="#"> -->
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-12">
+        <div class="slider-title_box slider-title_box-booking">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="slider-content_wrap">
+                <h1>Add a new booking</h1>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-12">
+              <%= render 'booking_form', booking: @booking, tool: @tool %>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--// SLIDER -->
+<!--//END HEADER -->
+<!--============================= FEATURED PLACES =============================-->
+
+<section class="main-block">
+  <div class="container light-bg1">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="styled-heading">
+          <h3>View other tools in <span style="color: #007f8c; font-weight:600">Melbourne, Australia</span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <%= image_tag "https://source.unsplash.com/d0yNnTEjEWY/400x250", class:'img-fluid img-shadow' %>
+      </div>
+      <div class="col-lg-4">
+        <%= image_tag "https://source.unsplash.com/Geh-r9A4RBg/400x250", class:'img-fluid img-shadow' %>
+
+      </div>
+      <div class="col-lg-4">
+       <%= image_tag "https://source.unsplash.com/CuDoRFyTkAQ/400x250", class:'img-fluid img-shadow' %>
      </div>
+   </div>
+   <div class="row justify-content-center home-btn">
+    <div class="col-lg-12">
+      <div class="featured-btn-wrap">
+        <%= link_to 'VIEW ALL', tools_path, class:'btn btn-danger' %>
+      </div>
+    </div>
   </div>
 </div>
+</section>
 
-<%= render 'booking_form', booking: @booking, tool: @tool %>
+<style>
+#main-search input{
+  padding: 24px;
+  width: 40%;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: none;
+  margin: 30px 0;
+}
+.home-btn{
+  margin-top:50px;
+}
+.slider-title_box-booking{
+  /*background-color: pink;*/
+  margin-bottom: 80px;
+}
+.light-bg1{
+  background: #f3f4f7;
+  padding: 90px 50px 100px 50px;
+}
+</style>
