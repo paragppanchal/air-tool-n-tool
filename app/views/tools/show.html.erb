@@ -15,14 +15,11 @@
 
 <section class="reserve-block">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6">
+    <div class="row vertical-align">
+      <div class="col-md-6 listing-margin">
         <h1><%= @tool.title %></h1>
-
+        <h4>Day Rate: <u>$<%= @tool.price_per_day %></u></h4>
         <p><span>$$$</span>$$</p>
-        <p class="reserve-description">Innovative cooking, paired with fine wines in a modern setting.</p>
-
-        <h2>Day Rate: <u>$<%= @tool.price_per_day %></u></h2>
 
       </div>
       <div class="col-md-6">
@@ -40,7 +37,6 @@
             </div>
           </div>
         </div>
-        <%= cl_image_tag @tool.photo, height: 200, width: 400, crop: :fill, class:'img-fluid' %>
       </div>
     </div>
   </div>
@@ -51,10 +47,17 @@
     <div class="row">
       <div class="col-md-8 responsive-wrap">
         <div class="booking-checkbox_wrap">
-          <div class="booking-checkbox">
+          <div class="booking-checkbox row">
+            <div class="col-lg-6"><%= cl_image_tag @tool.photo, height: 200, width: 400, crop: :fill, class:'img-fluid img-shadow' %>
+
+            </div>
+            <div class="col-lg-6">
             <p>Power tools are used in industry, in construction, in the garden, for housework tasks such as cooking, cleaning, and around the house for purposes of driving (fasteners), drilling, cutting, shaping, sanding, grinding, routing, polishing, painting, heating and more. </p>
-            <hr>
+
+            </div>
+
           </div>
+          <hr>
           <div class="row">
             <div class="col-md-4">
               <label class="custom-checkbox">
