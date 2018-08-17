@@ -1,19 +1,30 @@
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+
+
         <%= simple_form_for [@tool, @booking] do |f| %>
 
-          <%= f.input :start_date, as: :date, start_year: Date.today.year,
-                              end_year: Date.today.year, discard_day: false,
-                              order: [:day, :month, :year] %>
+        <%= f.input :start_date, as: :date, start_year: Date.today.year,
+        end_year: Date.today.year, discard_day: false,
+        order: [:day, :month, :year], id:'input-color' %>
 
-          <%= f.input :end_date, as: :date, start_year: Date.today.year,
-                              end_year: Date.today.year + 2, discard_day: false,
-                              order: [:day, :month, :year] %>
+        <%= f.input :end_date, as: :date, start_year: Date.today.year,
+        end_year: Date.today.year + 2, discard_day: false,
+        order: [:day, :month, :year] %>
 
-          <%= f.submit class: 'btn btn-primary btn-block' %>
+        <%= f.submit 'BOOK TOOL', class: 'btn-form' %>
         <% end %>
-      </div>
-    </div>
-  </div>
 
+
+
+<style>
+.form-control{
+border:none;
+width:20%;
+display: inline-block;
+margin:10px 0;
+height: 60px;
+border-radius: 3px;
+}
+#input-color label{
+  color:red;
+}
+</style>

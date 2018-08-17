@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     @tool = Tool.find(params[:tool_id])
     @booking.tool = @tool
     if @booking.save
-      redirect_to root_url
+      redirect_to bookings_url
     else
       render 'new'
     end

@@ -1,55 +1,73 @@
-<div class="container">
-  <div class="frame">
-    <div class="nav">
-      <ul class"links">
-        <li class="signin-active"><a class="btn">Add Tool</a></li>
-      </ul>
-    </div>
-    <div ng-app ng-init="checked = false">
 
-      <%= simple_form_for(@tool) do |f| %>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
+<div ng-app ng-init="checked = false">
 
-            <% if @tool.errors.any? %>
-            <div class="errors-container">
-              <ul>
-                <% @tool.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-            <% end %>
+  <%= simple_form_for(@tool) do |f| %>
 
-            <div class='form-group'>
-              <%= f.label :title %>
-              <%= f.text_field :title, class: 'form-control form-styling' %>
-            </div>
 
-            <div class='form-group'>
-              <%= f.label :price_per_day %>
-              <%= f.text_field :price_per_day, class: 'form-control form-styling' %>
-            </div>
-
-            <div class='form-group'>
-              <%= f.label :address %>
-              <%= f.text_field :address, class: 'form-control form-styling' %>
-            </div>
-
-            <div class='form-group'>
-              <%= f.input :photo %>
-              <%= f.input :photo_cache, as: :hidden, class: 'form-control' %>
-            </div>
-
-            <%= f.submit class: 'btn-primary btn-block btn-signin' %>
-
-          </div>
-        </div>
-      </div>
+  <% if @tool.errors.any? %>
+  <div class="errors-container">
+    <ul>
+      <% @tool.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
       <% end %>
-    </div>
+    </ul>
+  </div>
+  <% end %>
+<div class="input-color2">
+  <div class='form-group'>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: 'Try "chainsaw"', class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :price_per_day %>
+    <%= f.text_field :price_per_day, placeholder: '$10', class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :address %>
+    <%= f.text_field :address, placeholder: 'Melbourne CBD', class: 'form-control ' %>
+  </div>
+
+  <div class="moving-photo">
+
+
+
+  <div class='form-group'>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden, class: 'form-control' %>
   </div>
 </div>
 
+  <%= f.submit 'ADD TOOL', class: 'btn-form btn-margin' %>
 
+
+  <% end %>
+</div>
+<style>
+.form-control{
+border:none;
+width:50%;
+display: inline-block;
+margin:10px 0;
+height: 60px;
+border-radius: 3px;
+}
+.input-color2 label{
+  color:black;
+  font-size: 23px;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+font-weight: 500;
+line-height: 1.1;
+
+}
+.input-color2{
+  margin-bottom: 50px;
+}
+#tool_photo {
+margin-left: 580px;
+}
+.btn-margin{
+  margin:20px 0;;
+}
+</style>
