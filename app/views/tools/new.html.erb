@@ -1,2 +1,57 @@
-<%= render 'tool_form', tool: @tool %>
+<% content_for :title, "Home|AirTool-n-Tool" %>
+<section class="slider d-flex align-items-center">
+  <!-- <img src="images/slider.jpg" class="img-fluid" alt="#"> -->
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-12">
+        <div class="slider-title_box slider-title_box-booking">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="slider-content_wrap">
+                <h1>Add a new booking</h1>
+              </div>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-12">
+              <%= render 'tool_form', tool: @tool %>
 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- <style>
+#main-search input{
+  padding: 24px;
+  width: 40%;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border: none;
+  margin: 30px 0;
+    color:black;
+  font-size: 23px;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+font-weight: 500;
+line-height: 1.1;
+
+}
+.home-btn{
+  margin-top:50px;
+}
+.slider-title_box-booking{
+  /*background-color: pink;*/
+  margin-bottom: 80px;
+}
+.light-bg1{
+  background: #f3f4f7;
+  padding: 90px 50px 100px 50px;
+}
+</style>
+
+<hr> -->

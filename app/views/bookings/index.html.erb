@@ -6,7 +6,7 @@
             <div class="row detail-filter-wrap">
               <div class="col-md-4 featured-responsive">
                 <div class="detail-filter-text">
-                  <p>34 Results For <span>Tools</span></p>
+                  <p><span>My Bookings</span></p>
                 </div>
               </div>
               <div class="col-md-8 featured-responsive">
@@ -34,16 +34,7 @@
                 </div>
               </div>
             </div>
-            <div class="row detail-checkbox-wrap">
-              <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
 
-                <label class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input">
-                  <span class="custom-control-indicator"></span>
-                  <span class="custom-control-description">Bike Parking</span>
-                </label>
-              </div>
-            </div>
 
 
             <div class="row light-bg detail-options-wrap">
@@ -51,35 +42,27 @@
                 <h1>Tools I'm renting</h1>
               </div>
               <div class="row">
-                <div class="col-lg-6 featured-responsive">
-
+                <% current_user.bookings.each do |booking| %>
+                <div class="col-lg-3 featured-responsive">
                   <div class="featured-place-wrap">
-
                     <div class="featured-title-box">
-                      <h6>INSERT TOOL HERE</h6>
-                      <p>testttt</p>
-                      <p>More infor</p> <span> • </span>
-                      <ul>
-                        <li><span class="icon-location-pin"></span>
-                          <p>start date</p>
-                        </li>
-                        <li><span class="icon-screen-smartphone"></span>
-                          <p>end date</p>
-                        </li>
-                        <li><span class="icon-link"></span>
-                          <p>somtehi</p>
-                        </li>
+                      <%= cl_image_tag booking.tool.photo, crop: :fill, class:'img-fluid img-shadow' %>
+                      <h6><%= booking.tool.title%></h6>
 
-                      </ul>
-<!--                       <div class="bottom-icons">
-                        <div class="open-now">start date</div>
-                        <div class="closed-now">end date</div>
+
+                      <div class="bottom-icons">
+                        <div class="open-now"><p>start date</p>
+<%= booking.start_date %>
+                        </div>
+                        <div class="closed-now"><p>end date</p>
+<%= booking.end_date %></div>
                         <span class="ti-heart"></span>
                         <span class="ti-bookmark"></span>
-                      </div> -->
+                      </div>
                     </div>
                   </div>
                 </div>
+                <% end %>
               </div>
             </div>
           </div>
@@ -93,95 +76,44 @@
         <h1>Tools I'm lending</h1>
       </div>
       <div class="row">
-
-        <div class="col-lg-6 featured-responsive">
-
+        <% current_user.outbound_bookings.each do |booking| %>
+        <div class="col-lg-3 featured-responsive">
           <div class="featured-place-wrap">
-
             <div class="featured-title-box">
-              <h6>INSERT TOOL HERE</h6>
-              <p>testttt</p>
-              <p>More infor</p> <span> • </span>
+              <%= cl_image_tag booking.tool.photo, height: 200, width: 400, crop: :fill, class:'img-fluid img-shadow' %>
+              <h6><%= booking.tool.title %></h6>
               <ul>
                 <li><span class="icon-location-pin"></span>
-                  <p>start date</p>
+                  <p><%= booking.start_date %></p>
                 </li>
                 <li><span class="icon-screen-smartphone"></span>
-                  <p>end date</p>
+                  <p><%= booking.end_date %></p>
                 </li>
-                <li><span class="icon-link"></span>
-                  <p>somtehi</p>
-                </li>
-
               </ul>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
             </div>
-          </div>
-        </div>
 
-      </div>
-    </div>
-
-    <style>
-    .custom-select {
-      display: inline-block;
-      max-width: 100%;
-      padding: .375rem 1.75rem .375rem .75rem;
-      line-height: 1.25;
-      color: #495057;
-      vertical-align: middle;
-      background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
-      background-size: auto auto;
-      background-size: 8px 10px;
-      border: 1px solid rgba(0,0,0,.15);
-      border-radius: .25rem;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
-  </style>
-
-
-  <h1>WAWAA</h1>
-  <h1>My Rental Bookings</h1>
-
-
-
-
-  <table>
-    <th>
-      <td>Tool</td>
-      <td>User</td>
-      <td>Start Date</td>
-      <td>End Date</td>
-    </th>
-    <tr>
-      <% current_user.bookings.each do |booking| %>
-      <td><%= booking.tool.title%></td>
-      <td><%= booking.user.email %></td>
-      <td><%= booking.start_date %></td>
-      <td><%= booking.end_date %></td>
-      <% end %>
-    </tr>
-  </table>
-
-  <h1>My Landings</h1>
-  <br><br>
-  <table>
-    <th>
-      <td>Tool</td>
-      <td>User</td>
-      <td>Start Date</td>
-      <td>End Date</td>
-    </th>
-    <tr>
-      <% current_user.outbound_bookings.each do |booking| %>
-      <td><%=  booking.tool.title%></td>
-      <td><%= booking.user.email %></td>
-      <td><%= booking.start_date %></td>
-      <td><%= booking.end_date %></td>
-      <% end %>
-    </tr>
-  </table>
-
+            <style>
+            .custom-select {
+              display: inline-block;
+              max-width: 100%;
+              padding: .375rem 1.75rem .375rem .75rem;
+              line-height: 1.25;
+              color: #495057;
+              vertical-align: middle;
+              background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right .75rem center;
+              background-size: auto auto;
+              background-size: 8px 10px;
+              border: 1px solid rgba(0,0,0,.15);
+              border-radius: .25rem;
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+            }
+          </style>
 
 
