@@ -96,12 +96,12 @@
 
             <div class="row light-bg detail-options-wrap">
 
-              <% @tools.first(6).each do |tool| %>
+              <% @tools.each do |tool| %>
               <div class="col-lg-6 featured-responsive">
                 <div class="featured-place-wrap">
 
                   <%= cl_image_tag tool.photo, class:'img-fluid' %>
-                  <span class="featured-rating-orange ">6.5</span>
+                  <span class="featured-rating-orange "><%= rand(1.0..10.0).round(1) %></span>
                   <div class="featured-title-box">
                     <h6><%= link_to tool.title, tool_path(tool) %></h6>
 
