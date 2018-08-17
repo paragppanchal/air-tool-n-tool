@@ -18,9 +18,9 @@
 
               <%= form_tag(tools_path, method: :get, id:'main-search') do %>
 
-              <%= text_field_tag :query, :drill, placeholder: "Try typing a tool name" %>
+                <%= text_field_tag :query, :drill, placeholder: "Try typing a tool name" %>
 
-              <%= submit_tag 'SEARCH', class: 'btn-form' %>
+                <%= submit_tag 'SEARCH', class: 'btn-form', :style => "width: 200px;" %>
               <% end %>
               <div class="slider-link">
 
